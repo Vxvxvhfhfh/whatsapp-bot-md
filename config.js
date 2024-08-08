@@ -9,13 +9,13 @@ const DATABASE_URL =
   process.env.DATABASE_URL === undefined ? databasePath : process.env.DATABASE_URL
 module.exports = {
   VERSION: require('./package.json').version,
-  SESSION_ID: (process.env.SESSION_ID || '31_7_c066_0062_8fce').trim(),
+  SESSION_ID: (process.env.SESSION_ID || '9_8_1718_a234_2d23').trim(),
   DATABASE:
     DATABASE_URL === databasePath
       ? new Sequelize({
           dialect: 'sqlite',
           storage: DATABASE_URL,
-          logging: false,
+          logging: true,
         })
       : new Sequelize(DATABASE_URL, {
           dialect: 'postgres',
@@ -32,9 +32,9 @@ module.exports = {
   HEROKU_APP_NAME: process.env.HEROKU_APP_NAME,
   HEROKU_API_KEY: process.env.HEROKU_API_KEY,
   BRANCH: 'master',
-  STICKER_PACKNAME: process.env.STICKER_PACKNAME || '❤️,LyFE',
+  STICKER_PACKNAME: process.env.STICKER_PACKNAME || 'eoza bot',
   ALWAYS_ONLINE: toBool(process.env.ALWAYS_ONLINE),
-  LOG_MSG: toBool(process.env.LOG_MSG) || false,
+  LOG_MSG: toBool(process.env.LOG_MSG) || true,
   RMBG_KEY: process.env.RMBG_KEY || 'null',
   BAILEYS_LOG_LVL: process.env.BAILEYS_LOG_LVL || 'silent',
   LANG: (process.env.LANGUAG || 'en').toLowerCase(),
@@ -47,7 +47,7 @@ module.exports = {
   ANTIWORDS_MSG: process.env.ANTIWORDS_MSG || '_AntiWord Detected &mention kicked_',
   ANTIWORDS: process.env.ANTIWORDS || 'word',
   MENTION: process.env.MENTION || '',
-  MAX_UPLOAD: process.env.MAX_UPLOAD || 230,
+  MAX_UPLOAD: process.env.MAX_UPLOAD || 999999999,
   REJECT_CALL: toBool(process.env.REJECT_CALL),
   VPS: toBool(process.env.VPS),
   AUTO_STATUS_VIEW: (process.env.AUTO_STATUS_VIEW || 'false').trim(),
